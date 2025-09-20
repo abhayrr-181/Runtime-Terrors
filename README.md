@@ -20,7 +20,6 @@
 - **Dashboard with Results**: Clear categorization - Safe, Suspicious, Phishing
 
 ### 🤖 AI-Powered Analysis
-- **LLaMA-2** powered conversational AI for financial advice and fraud prevention
 - **Real-time Pattern Recognition**: Detects urgency tactics, authority impersonation, and social engineering
 - **Context-Aware Responses**: Provides educational guidance with source citations
 - **Multi-Modal Processing**: Handles text, URLs, and images seamlessly
@@ -34,7 +33,6 @@
 
 ### Backend & AI
 - **FastAPI (Python)** - High-performance phishing detection API
-- **LLaMA-2-7b-chat-hf** - Conversational AI for guidance
 - **Hugging Face Inference API** - ML model integration
 
 ### ML/NLP & Analysis
@@ -42,12 +40,6 @@
 - **Tesseract OCR** - Screenshot text extraction
 - **Heuristic Rules Engine** - Lightweight, explainable detection
 
-### Utilities & Infrastructure
-- **Validators** - URL validation and structure analysis
-- **Requests** - Link resolution and external API calls
-- **GitHub** - Version control and collaboration
-- **Docker** - Containerized deployment
-- **Vercel** - Cloud deployment platform
 
 ### Database (Optional)
 - **SQLite** - Lightweight local database for caching
