@@ -5,7 +5,7 @@ import { Send, Link2, ShieldAlert, Loader2, Mail, MessageSquare, Camera, Upload 
 
 export default function Page() {
   const [messages, setMessages] = useState([
-    { role: 'assistant', content: "👋 Hi! I'm Secure FinBot. Ask me about banking terms, loans, or how to avoid fraud. Try: \"What is a phishing scam?\" or \"Explain credit default swap in simple terms.\"" }
+    { role: 'assistant', content: "🛡️ Hello! I'm Garuda, your AI-powered phishing detection assistant. I can help you identify suspicious URLs, emails, messages, and screenshots. What would you like me to check for you?" }
   ]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
@@ -113,8 +113,8 @@ export default function Page() {
     <div className="max-w-7xl mx-auto grid grid-cols-10 gap-6">
       {/* Chatbot Area - 70% (7/10) */}
       <div className="col-span-7 card">
-        <h1 className="text-2xl font-semibold">Secure FinBot (LLaMA-2)</h1>
-        <p className="text-slate-400 mt-1">Finance-focused chatbot. Answers about banking terms, loans, and fraud alerts. Sources shown when available.</p>
+        <h1 className="text-2xl font-semibold">🛡️ Garuda - Phishing Detection Assistant</h1>
+        <p className="text-slate-400 mt-1">AI-powered assistant for detecting phishing attempts in URLs, emails, messages, and screenshots.</p>
 
         <div className="mt-4 h-[65vh] overflow-y-auto space-y-4 pr-2">
           {messages.map((m, i) => (
