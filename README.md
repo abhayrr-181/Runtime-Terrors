@@ -48,9 +48,9 @@
 
 ### What makes our solution different from existing solutions?
 
-1. **Comprehensive Multi-Input Analysis**: Most phishing detection tools focus only on emails or URLs. Our solution supports multi-input analysis: text, URLs, and screenshots.
+1. Comprehensive Multi-Input Analysis: Most phishing detection tools focus only on emails or URLs. Our solution supports multi-input analysis: text, URLs, and screenshots.
 
-2. **Lightweight ML Models**: No heavy external APIs → works offline and during demos, making it perfect for educational environments and resource-constrained scenarios.
+2. Lightweight ML Models: No heavy external APIs → works offline and during demos, making it perfect for educational environments and resource-constrained scenarios.
 
 3. **Educational Focus**: Instead of just flagging risks, we educate and guide users to respond safely, building long-term digital awareness.
 
