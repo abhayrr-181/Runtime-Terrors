@@ -37,8 +37,8 @@ A comprehensive phishing detection system that combines an LLaMA-2 powered finan
 
 ### 1. Clone and Install
 ```bash
-git clone <repository-url>
-cd secure-finbot-hf
+git clone https://github.com/abhayrr-181/Runtime-Terrors.git
+cd Runtime-Terrors
 npm install
 ```
 
