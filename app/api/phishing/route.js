@@ -361,7 +361,13 @@ async function detectScreenshotPhishing(screenshot) {
 
 async function fallbackUrlDetection(url) {
   try {
-    const u = new URL(url);
+    // Add protocol if missing
+    let testUrl = url;
+    if (!url.startsWith('http://') && !url.startsWith('https://')) {
+      testUrl = 'https://' + url;
+    }
+    
+    const u = new URL(testUrl);
     let score = 0;
     const details = [];
     
@@ -387,17 +393,38 @@ async function fallbackUrlDetection(url) {
     }
     
     // Check for typosquatting
-    const suspiciousDomains = ['g0ogle', 'go0gle', 'g00gle', 'faceb00k', 'amaz0n', 'paypa1'];
+    const suspiciousDomains = ['g0ogle', 'go0gle', 'g00gle', 'faceb00k', 'amaz0n', 'paypa1', 'micr0soft', 'app1e', 'y0utube'];
     if (suspiciousDomains.some(domain => u.hostname.includes(domain))) {
       score += 0.5;
       details.push('Potential typosquatting detected');
     }
     
     // Check for suspicious TLDs
-    const suspiciousTlds = ['.tk', '.ml', '.ga', '.cf'];
+    const suspiciousTlds = ['.tk', '.ml', '.ga', '.cf', '.click', '.download'];
     if (suspiciousTlds.some(tld => u.hostname.endsWith(tld))) {
       score += 0.4;
       details.push('Suspicious top-level domain');
+    }
+    
+    // Check for IP addresses
+    const ipPattern = /^(\d{1,3}\.){3}\d{1,3}$/;
+    if (ipPattern.test(u.hostname)) {
+      score += 0.4;
+      details.push('Uses IP address instead of domain name');
+    }
+    
+    // Check for shortened URLs
+    const shorteners = ['bit.ly', 'tinyurl.com', 'short.link', 't.co', 'goo.gl'];
+    if (shorteners.some(shortener => u.hostname.includes(shortener))) {
+      score += 0.3;
+      details.push('Shortened URL detected');
+    }
+    
+    // Check for suspicious keywords in path
+    const suspiciousKeywords = ['login', 'verify', 'account', 'security', 'update', 'confirm'];
+    if (suspiciousKeywords.some(keyword => u.pathname.toLowerCase().includes(keyword))) {
+      score += 0.2;
+      details.push('Suspicious keywords in URL path');
     }
     
     const confidence = Math.min(score, 1);
