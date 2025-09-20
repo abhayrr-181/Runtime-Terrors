@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Basic theme */
+:root {
+  --bg: #071028;
+  --card: #0b1220;
+  --muted: #94a3b8;
+}
+
+html, body {
+  height: 100%;
+  background: linear-gradient(180deg, #071028 0%, #07102a 100%);
+  color: #e6eef8;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  margin: 0;
+  padding: 18px;
+}
+
+.input {
+  @apply w-full rounded-xl border border-slate-700 bg-slate-900/50 px-3 py-2 outline-none;
+}
+.btn {
+  @apply rounded-xl px-4 py-2 bg-sky-600 hover:bg-sky-500;
+}
+.card {
+  @apply rounded-2xl border border-slate-800 bg-slate-900/50 p-4;
+}
+
+.message-user { @apply bg-sky-600 text-white rounded-2xl px-4 py-3; }
+.message-bot { @apply bg-slate-800/70 text-white rounded-2xl px-4 py-3; }
+
+.animation-dots span { display:inline-block; width:8px; height:8px; background:#cbd5e1; border-radius:9999px; margin-right:6px; opacity:0.3; animation: blink 1s infinite; }
+.animation-dots span:nth-child(2){ animation-delay:0.15s } .animation-dots span:nth-child(3){ animation-delay:0.3s }
+@keyframes blink { 0%,100%{opacity:0.2} 50%{opacity:1} }

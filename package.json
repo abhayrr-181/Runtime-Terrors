@@ -1,0 +1,26 @@
+{
+  "name": "secure-finbot-hf",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "14.2.5",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "tailwindcss": "3.4.13",
+    "autoprefixer": "10.4.20",
+    "postcss": "8.4.47",
+    "lucide-react": "0.473.0",
+    "zod": "3.23.8",
+    "tesseract.js": "^5.0.4",
+    "multer": "^1.4.5-lts.1",
+    "sharp": "^0.33.2",
+    "node-html-parser": "^6.1.12",
+    "cheerio": "^1.0.0-rc.12",
+    "axios": "^1.6.7"
+  }
+}
